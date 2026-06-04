@@ -19,6 +19,11 @@ public class BusUnitTests {
 
     // .................Shared Test Values..........................
 
+    /**
+    * Default test data to act as a template for unit tests.
+    * makeValidBus can be used to create new test data for unit tests.
+    */
+
     private static final String VALID_BUS_ID  = "12345678"; // 8 digits — satisfies B1
     private static final int    VALID_CAP     = 40;
     private static final double VALID_FUEL    = 75.0;
@@ -183,11 +188,11 @@ public class BusUnitTests {
 
     /**
      *  TC-B-15 Valid input: Light Licence is Allowed for driving a diesel bus.
-     *  B5 Requires a Heavy or PublicTransport licence ONLY for elctricity/Hybrid busses - Light is acceptable.
+     *  B5 Requires a Heavy or PublicTransport licence ONLY for electricity/Hybrid busses - Light is acceptable.
      */
 
     @Test
-    void testLicence_lightLicence_DiselBus_allowed() {
+    void testLicence_lightLicence_DieselBus_allowed() {
         assertDoesNotThrow(() -> Bus.validateLicenceForBusType("Light", "Diesel"),
                 "A Low licence should be allowed on an electric bus (B5).");
     }
