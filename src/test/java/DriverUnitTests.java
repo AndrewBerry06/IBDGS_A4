@@ -3,14 +3,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the Driver class.
- *
  * Coverage:
  *   D1 - driverID format rules          (TC-D-01 to TC-D-03)
  *   D2 - address format                 (TC-D-04 to TC-D-06)
  *   D3 - birthdate format               (TC-D-07 to TC-D-09)
  *   D4 - licenseType update restriction (TC-D-10 to TC-D-12)
  *   D5 - immutable driverID and name    (TC-D-13 to TC-D-15)
- *
  * Each condition has at least three cases covering:
  *   - a normal/valid scenario
  *   - an invalid input
