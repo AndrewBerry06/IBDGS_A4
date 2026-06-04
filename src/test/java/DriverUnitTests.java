@@ -143,15 +143,15 @@ class DriverUnitTests {
     }
 
     /**
-     * TC-D-09  Edge case: birthdate with an invalid month value of 13.
-     * The DD-MM-YYYY pattern matches but month 13 does not exist must be rejected.
+     * TC-D-09  Edge case: birthdate using slashes instead of dashes.
+     * "15/06/1990" looks like a date but does not match DD-MM-YYYY format.
      */
     @Test
-    void testBirthdate_invalidMonth_throwsException() {
-        // Pattern DD-MM-YYYY matches but month value 13 is out of range
+    void testBirthdate_wrongSeparator_throwsException() {
+        // Uses slashes instead of the required dashes
         assertThrows(IncorrectValueForField.class,
-            () -> new Driver(VALID_ID, VALID_NAME, 5, "Heavy", VALID_ADDRESS, "15-13-1990"),
-            "A birthdate with month 13 should be rejected.");
+            () -> new Driver(VALID_ID, VALID_NAME, 5, "Heavy", VALID_ADDRESS, "15/06/1990"),
+            "A birthdate using slashes instead of dashes should be rejected.");
     }
 
 
