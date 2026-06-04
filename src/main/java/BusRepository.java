@@ -132,9 +132,11 @@ public class BusRepository {
      * @return count of buses
      * @throws IOException if the file cannot be read
      */
-    public int count() throws IOException {
-        return readAll().length();
-    }
+    //Use for intergration testing
+   public int count() throws IOException {
+         return readAll().length();
+   }
+
     // .........FileHelpers...........
 
     /**
